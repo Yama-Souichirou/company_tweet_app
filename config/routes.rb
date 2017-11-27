@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
   get '/top' => 'home#top'
   get '/about' => 'home#about'
 
