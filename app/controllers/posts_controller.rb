@@ -15,8 +15,11 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(content: params[:content])
-		@post.save
-    redirect_to "/posts/index"
+		if @post.save
+      redirect_to "/posts/index"
+    else
+    	render 'new'
+    end
   end
 
   def edit
