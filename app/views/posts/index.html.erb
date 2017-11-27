@@ -10,21 +10,13 @@
 </header>
 
 
-<!-- 以下の「<% %>」の中に指定された内容の配列postsを定義してください -->
-<%
-   posts = ["今日からProgateでRailsの勉強するよー！", "投稿一覧ページ作成中！"]
-  
-%>
-
 <div class="main posts-index">
   <div class="container">
-    <!-- 以下の<% %>を使ってeach文を追加してください -->
-    <% posts.each do |post|  %>
+    <!-- 変数postsを@postsに書き換えてください -->
+    <% @posts.each do |post| %>
       <div class="posts-index-item">
-        <!-- 以下の<%= %>を使って投稿内容を表示してください -->
         <%= post %>
       </div>
-    <!-- 以下の<% %>を使ってeach文のendを追加してください -->
     <% end %>
   </div>
 </div>
