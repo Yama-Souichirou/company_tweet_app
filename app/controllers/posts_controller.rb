@@ -24,6 +24,9 @@ class PostsController < ApplicationController
   end
 
   def update
+  	@post = post.find(params[:id])
+  	@post.content = params[:content]
+  	@post.save
   	redirect_to "/posts/index"
   end
 end
