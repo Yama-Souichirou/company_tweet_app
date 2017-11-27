@@ -11,10 +11,12 @@
 <body>
 	<header>
 		<div class="header-logo">
-			TweetApp
+			<%= link_to "TweetApp", root_path %>
 		</div>
 		<ul class="header-menus">
-			<li>TweetAppとは</li>
+			<li>
+				<%= link_to "TweetAppとは", "/about" %>
+			</li>
 		</ul>
 	</header>
 	<%= yield %>
