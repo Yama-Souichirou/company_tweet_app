@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   get '/signup' => 'users#new'
   post '/users/create' => 'users#create'
+  get '/users/:id/edit' => 'users#edit'
 
   get '/top' => 'home#top'
   get '/about' => 'home#about'
