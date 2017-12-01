@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, only: [:index, :show, :edit, :update]
+  before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
   	@users = User.all
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   def login_form
-    
+
   end
 
   def login
@@ -73,5 +74,12 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
     redirect_to '/login'
+  end
+
+  def ensure_correct_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to '/posts/index'
+    end
   end
 end

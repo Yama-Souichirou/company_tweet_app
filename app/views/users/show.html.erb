@@ -4,8 +4,9 @@
     	<img src="/assets/img/<%= @user.image_name %>">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
+      <% if @user.id == @current_user.di %>
       <%= link_to "編集", "/users/#{@user.id}/edit" %>
-      
+      <% end %>
     </div>
   </div>
 </div>
